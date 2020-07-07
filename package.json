@@ -1,0 +1,34 @@
+{
+  "name": "apiv2-openapi",
+  "version": "2.0.0",
+  "description": "DigitalOcean API - OpenAPI Specification",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "newman run tests/DigitalOcean-gets.postman_collection.json --env-var baseUrl=$TARGET_API --env-var accessToken=$DO_TOKEN --reporters json,cli --reporter-json-export newman-results.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digitalocean/apiv2-openapi.git"
+  },
+  "keywords": [
+    "openapi",
+    "digital ocean",
+    "cloud",
+    "api",
+    "documentation"
+  ],
+  "author": "DigitalOcean API Engineering",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/digitalocean/apiv2-openapi/issues"
+  },
+  "homepage": "https://github.com/digitalocean/apiv2-openapi#readme",
+  "dependencies": {
+    "@stoplight/prism-cli": "^3.3.5",
+    "@stoplight/spectral": "^5.4.0",
+    "newman": "^5.1.0"
+  }
+}

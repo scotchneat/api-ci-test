@@ -1,0 +1,29 @@
+name: Pull Request Validation
+
+on: 
+  - push
+  - pull_request
+
+jobs:
+  lint:
+    name: Run Spectral
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: stoplightio/spectral-action@master
+        with:
+          file_glob: "./DigitalOcean-public.v2.yaml"
+  validate-with-mock:
+    name: Validate with Prism Proxy (target Prism Mock)
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          node-version: '14.x'
+      - name: Deploy Mock and Proxy
+        run: docker-compose up -d
+      - name: Install dependencies
+        run: npm install
+      - name: Run contract validation
+        run: npm test
