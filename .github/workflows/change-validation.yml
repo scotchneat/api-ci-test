@@ -1,4 +1,4 @@
-name: Pull Request Validation
+name: Change Validation
 
 on: 
   - push

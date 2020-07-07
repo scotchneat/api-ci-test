@@ -12,7 +12,7 @@ services:
 
   proxy:
     image: stoplight/prism:latest
-    command: proxy -h 0.0.0.0 /prism/DigitalOcean-public.v2.yaml http://mock:4010
+    command: proxy -h 0.0.0.0 /prism/DigitalOcean-public.v2.yaml ${PROXY_TARGET}
     volumes:
       - .:/prism
     ports:

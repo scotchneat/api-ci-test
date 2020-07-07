@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "newman run tests/DigitalOcean-gets.postman_collection.json --env-var baseUrl=$TARGET_API --env-var accessToken=$DO_TOKEN --reporters json,cli --reporter-json-export newman-results.json"
+    "test": "newman run tests/DigitalOcean.postman_collection.json --env-var baseUrl=$TARGET_API --env-var accessToken=$DO_TOKEN --reporters json,cli --reporter-json-export newman-results.json"
   },
   "repository": {
     "type": "git",
