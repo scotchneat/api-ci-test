@@ -17,3 +17,5 @@ jobs:
         run: make start-mockedproxy
       - name: Run contract validation
         run: make test
+        env:
+          DO_TOKEN: XXXXXX
