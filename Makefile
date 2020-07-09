@@ -8,6 +8,9 @@ NEWMAN_CMD = newman run tests/DigitalOcean.postman_collection.json
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
+install: ## Install dependencies
+	npm install
+
 start-mockedproxy: ## Start a prism proxy (port 8080) targeting a local mock api (port 4010)
 	PROXY_TARGET=$(PROXY_TARGET) docker-compose up -d
 
