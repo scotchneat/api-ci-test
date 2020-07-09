@@ -26,7 +26,6 @@
   "dependencies": {
     "@stoplight/prism-cli": "^3.3.5",
     "@stoplight/spectral": "^5.4.0",
-    "newman": "^5.1.0",
-    "redoc": "^2.0.0-rc.31"
+    "newman": "^5.1.0"
   }
 }
