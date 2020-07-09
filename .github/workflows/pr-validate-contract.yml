@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: '14.x'
       - name: Install dependencies
-        run: make install
+        run: npm i -g newman
       - name: Deploy Mock and Proxy
         run: make start-mockedproxy
       - name: Run contract validation
