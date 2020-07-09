@@ -10,7 +10,7 @@ help:
 
 install: ## Install dependencies
 	npm install && \
-	npm ls --depth=0 && 
+	npm ls --depth=0 && \
 	ls -la node_modules/.bin
 
 start-mockedproxy: ## Start a prism proxy (port 8080) targeting a local mock api (port 4010)
