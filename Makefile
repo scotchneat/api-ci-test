@@ -4,6 +4,7 @@
 PROXY_TARGET ?= http://mock:4010
 SPEC_FILE = DigitalOcean-public.v2.yaml
 NEWMAN_CMD = npx newman run tests/DigitalOcean.postman_collection.json
+DO_TOKEN ?= XXXXXX
 
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
