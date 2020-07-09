@@ -65,7 +65,9 @@
 				"id": "79173ceb-65da-448c-bdc7-61bd7e8c2338",
 				"type": "text/javascript",
 				"exec": [
-					"if (pm.environment.get('TARGET_PROXY_ENVIRONMENT').toLowerCase() == 'prod') {",
+					"let env = pm.environment.get('PROXY_PROD');",
+					"",
+					"if ( env ) {",
 					"    pm.request.headers.add({key: 'accept-encoding', value: '' })",
 					"}"
 				]
@@ -84,7 +86,7 @@
 	],
 	"variable": [
 		{
-			"id": "f199cc28-445e-45df-b798-b08e82563d18",
+			"id": "b81d23a0-5dae-4272-aea8-87cbaaad0cf7",
 			"key": "baseUrl",
 			"value": "https://api.digitalocean.com/v2"
 		}

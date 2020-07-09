@@ -6,9 +6,6 @@
   "directories": {
     "test": "tests"
   },
-  "scripts": {
-    "test": "newman run tests/DigitalOcean.postman_collection.json --env-var baseUrl=$TARGET_API --env-var accessToken=$DO_TOKEN --reporters json,cli --reporter-json-export newman-results.json"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/digitalocean/apiv2-openapi.git"
@@ -29,6 +26,7 @@
   "dependencies": {
     "@stoplight/prism-cli": "^3.3.5",
     "@stoplight/spectral": "^5.4.0",
-    "newman": "^5.1.0"
+    "newman": "^5.1.0",
+    "redoc": "^2.0.0-rc.31"
   }
 }

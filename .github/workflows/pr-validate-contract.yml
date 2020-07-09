@@ -1,21 +1,21 @@
-name: Change Validation
+name: "PR: Validate Contract"
 
 on: 
   - pull_request
 
 jobs:
   
-  validate-with-mock:
-    name: Validate with Prism Proxy (target Prism Mock)
+  with-mock:
+    name: Validate requests (mocked api)
     runs-on: ubuntu-latest
     
     steps:
       - uses: actions/checkout@v2
         with:
           node-version: '14.x'
-      - name: Deploy Mock and Proxy
-        run: docker-compose up -d
       - name: Install dependencies
-        run: npm install
+        run: make install
+      - name: Deploy Mock and Proxy
+        run: make start-mockedproxy
       - name: Run contract validation
-        run: npm test
+        run: make test
